@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UFC Ultimate Fan Portal</title>
+
+    <!-- =========================
+         GLOBAL STYLES
+    ========================== -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0b0b0b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+            letter-spacing: 1px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+        header {
+            background: linear-gradient(90deg, #8b0000, #c00000);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 4px solid #000;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #f5f5f5;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #141414;
+            padding: 15px;
+            border-bottom: 2px solid #222;
+        }
+
+        nav a {
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff1a1a;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================== */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        /* =========================
+           SECTION STYLES
+        ========================== */
+        section {
+            margin-bottom: 50px;
+            background-color: #161616;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+        }
+
+        section h2 {
+            border-bottom: 2px solid #c00000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           CARDS
+        ========================== */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* =========================
+           BUTTONS
+        ========================== */
+        button {
+            background-color: #c00000;
+            border: none;
+            padding: 12px 20px;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #ff1a1a;
+        }
+
+        /* =========================
+           TABLE
+        ========================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        th {
+            background-color: #c00000;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #222;
+        }
+
+        footer p {
+            margin: 5px;
+            font-size: 14px;
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+<header>
+    <h1>UFC Ultimate Fan Portal</h1>
+    <p>Your complete destination for fighters, divisions, and fight nights</p>
+</header>
+
+<!-- =========================
+     NAVIGATION
+========================== -->
+<nav>
+    <a href="#about">About UFC</a>
+    <a href="#fighters">Fighters</a>
+    <a href="#divisions">Divisions</a>
+    <a href="#events">Events</a>
+    <a href="#stats">Stats</a>
+</nav>
+
+<div class="container">
+
+<!-- =========================
+     ABOUT SECTION
+========================== -->
+<section id="about">
+    <h2>About UFC</h2>
+    <p>
+        The Ultimate Fighting Championship (UFC) is the world's premier mixed martial arts
+        organization. It brings together elite fighters from different combat disciplines
+        such as boxing, wrestling, Brazilian jiu-jitsu, and Muay Thai.
+    </p>
+    <p>
+        This web project is developed as part of a Git Bash and GitHub hands-on assignment.
+        The focus of the project is to demonstrate version control concepts such as branching,
+        merging, and conflict resolution.
+    </p>
+</section>
+
+<!-- =========================
+     FIGHTERS SECTION
+========================== -->
+<section id="fighters">
+    <h2>Popular UFC Fighters</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Conor McGregor</h3>
+            <p>Former Featherweight and Lightweight Champion.</p>
+        </div>
+
+        <div class="card">
+            <h3>Khabib Nurmagomedov</h3>
+            <p>Undefeated Lightweight Champion (29-0).</p>
+        </div>
+
+        <div class="card">
+            <h3>Jon Jones</h3>
+            <p>One of the greatest fighters in UFC history.</p>
+        </div>
+
+        <div class="card">
+            <h3>Israel Adesanya</h3>
+            <p>Former Middleweight Champion known for striking.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     DIVISIONS SECTION
+========================== -->
+<section id="divisions">
+    <h2>UFC Weight Divisions</h2>
+
+    <button onclick="showDivision()">Show Featured Division</button>
+    <p id="divisionOutput"></p>
+
+    <table>
+        <tr>
+            <th>Division</th>
+            <th>Weight Limit</th>
+        </tr>
+        <tr>
+            <td>Flyweight</td>
+            <td>125 lbs</td>
+        </tr>
+        <tr>
+            <td>Lightweight</td>
+            <td>155 lbs</td>
+        </tr>
+        <tr>
+            <td>Welterweight</td>
+            <td>170 lbs</td>
+        </tr>
+        <tr>
+            <td>Middleweight</td>
+            <td>185 lbs</td>
+        </tr>
+        <tr>
+            <td>Heavyweight</td>
+            <td>265 lbs</td>
+        </tr>
+    </table>
+</section>
+
+<!-- =========================
+     EVENTS SECTION
+========================== -->
+<section id="events">
+    <h2>Upcoming UFC Events</h2>
+
+    <ul>
+        <li>UFC Fight Night – Las Vegas</li>
+        <li>UFC 305 – Championship Bout</li>
+        <li>UFC International Fight Week</li>
+        <li>UFC Pay-Per-View Main Event</li>
+    </ul>
+
+    <button onclick="announceFight()">Announce Fight</button>
+    <p id="eventMessage"></p>
+</section>
+
+<!-- =========================
+     STATS SECTION
+========================== -->
+<section id="stats">
+    <h2>Project Statistics</h2>
+
+    <p>This project demonstrates:</p>
+    <ul>
+        <li>HTML structure and semantic tags</li>
+        <li>CSS styling and layout techniques</li>
+        <li>JavaScript interactivity</li>
+        <li>Git branching and merging workflow</li>
+        <li>Merge conflict creation and resolution</li>
+    </ul>
+
+    <button onclick="showStats()">Show Completion Status</button>
+    <p id="statsOutput"></p>
+</section>
+
+</div>
+
+<!-- =========================
+     FOOTER
+========================== -->
+<footer>
+    <p>© 2025 UFC Ultimate Fan Portal</p>
+    <p>Created by MD Rizwan Ahmed | Version Control Systems Project</p>
+</footer>
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+<script>
+    function showDivision() {
+        document.getElementById("divisionOutput").innerText =
+            "Featured Division: Lightweight – Speed, Skill, and Explosive Power!";
+    }
+
+    function announceFight() {
+        document.getElementById("eventMessage").innerText =
+            "Main Event Announced: Championship fight scheduled for this weekend!";
+    }
+
+    function showStats() {
+        document.getElementById("statsOutput").innerText =
+            "Project Status: Fully implemented with Git branches, merges, and conflict resolution.";
+    }
+</script>
+
+</body>
+</html>
